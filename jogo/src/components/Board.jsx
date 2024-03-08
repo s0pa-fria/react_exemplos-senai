@@ -1,54 +1,54 @@
-import React, { useState } from "react";
+import React, { useState} from "react";
 import Square from "./Square";
 
 const Board = () => {
-    // Estado para armazenar o estado atual dos quadros no tabuleiro
-    const [squares, setSquares] = useState(array(9).fill(null));
+    // Estado para armazenar o estado atual dos quadrados no tabuleiro
+    const [squares, setSquares] = useState(Array(9).fill(null));
 
     // Estado para determinar se é a vez do jogador "X" ou "O"
     const [xIsNext, setXIsNext] = useState(true);
 
-    // Função para celular o vencedor com base nos quadrados preenchidos
+    //  Função para calcular o vencedor com base nos quadrados preenchidos
     const winner = calculateWinner(squares);
 
-    // Função para lidar com o clique em um quadrado
+    // Função para lidar colm o clique em um quadrado
     const handleClick = (i) => {
-        // Verifica se o quadrado já está preenchido ou se há um vencedor
+        //Verifica se o quadrado já está preenchido ou se há um vencedor
         if (squares[i] || winner) return;
 
-        // Cria uma cópia do array de quadrados para evitar mutações diretas
+        //Cris uma cópia do array de quadrados para evitar mutações diretas
         const newSquares = squares.slice();
 
-        // Preenche o quadrado com "X" ou "O" com base na vez do jogador
+        //Preenche o quadrado com X ou O com base na vez do jogador
         newSquares[i] = xIsNext ? "X" : "O";
 
-        // Atualiza o estado dos quadrados e passa a vez para o proximo jogador
+        //Atualia o estado dos quadrados e passa a vez para o próximo jogador
         setSquares(newSquares);
         setXIsNext(!xIsNext);
     };
 
-    // Função para reiniciar o jogo
+    //Função para reiniciar o jogo
     const restartGame = () => {
-        // Reinicia o estado dos quadrados e define a vez do jogador com "X"
-        serSquares(Array(9).fill(null));
+        //Reinicia o estado dos quadrados e f=define a vez do jogados como "X "
+        setSquares(Array(9).fill(null));
         setXIsNext(true);
     };
 
-    // Renderização do componente
+    //Renderização do componente 
     return (
         <div>
-        <div className="status">
-            Status:{" "}
-            {winner ? (
-                // Exibe o vencedor se houver um
-                <p className="winner">O vencedor é: {winner}!</p>
-            ) : (
-                // Exibe o próximo jogador se não houver vencedor
-                `Próximo a jogar: ${xIsNext ? "X" : "O"}`
-            )}
+            <div className="status">
+                Status:{" "}
+                {winner ? (
+                    //Exibe o vencedo se houver um
+                    <p className="winner">O vencedor é: {winner}!</p>
+                ) : (
+                    //Exibe o próximo jogador se não houver um vencedor
+                    `Próximo a jogar: ${xIsNext ? "X" : "O"}`
+                )}
             </div>
-            {/* Renderização das linhas do tabuleiro com componentes Square */}
-            <div className="board-row">
+             {/* Renderização das linhas do tabuleiro com componentes Square */}
+             <div className="board-row">
                 <Square value={squares[0]} onClick={() => handleClick(0)} />
                 <Square value={squares[1]} onClick={() => handleClick(1)} />
                 <Square value={squares[2]} onClick={() => handleClick(2)} />
@@ -70,7 +70,6 @@ const Board = () => {
         </div>
     );
 };
-
 // Funções para calcular o vencedor com base nos quadrados preenchidos
 const calculateWinner = (squares) => {
     const lines = [
@@ -98,3 +97,5 @@ const calculateWinner = (squares) => {
 
 // Exporta o componente Board como padrão
 export default Board;
+        
+   
