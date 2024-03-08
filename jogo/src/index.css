@@ -7,21 +7,34 @@ html{
   display: flex;
   justify-content: center;
   align-items: center;
-
-  background-color: #f4f4f4;
   
+ /* Alterações de fundo */
+  background-color: #895b4f;
+  background-image: url(assets/wpp.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* ___________________ */
+
   font-family: Helvetica;
   text-align: center;
 }
 
+body{
+  background: rgba(255, 255, 255, 0);
+}
+
+.App{
+  color: #fff;
+}
 /* Estilo para cada quadrado */
 .square{
   width: 100px;
   height: 100px;
-
-  background-color: #ddd;
-  border: 1px solid #ccc;
-  
+/* Alterações de cor */
+  background-color: #7b473a;
+  border: 1px solid #5f362c;
+  border-radius: 5px;
+/* ___________________ */
   font-size: 32px;
   font-weight: bold;
   text-align: center;
@@ -32,7 +45,8 @@ html{
 
 /* Estilo para o vencedor */
 .winner {
-  background-color: #ffcc00;
+  background-color: #6e16ad;
+  color: #fff;
 }
 
 /* Estilo para o status do jogo */
@@ -41,7 +55,7 @@ html{
 
   text-align: center;
   font-size: 24px;
-  color: #333;
+  color: #fff;
 }
 
 /* Estilo para o botão de reiniciar */
@@ -52,7 +66,7 @@ html{
   font-size: 18px;
   color: #fff;
 
-  background-color: #007bff;
+  background-color: #ff0000;
 
   border: none;
   border-radius: 4px;
@@ -62,5 +76,5 @@ html{
 
 /* Estilo para o botão de reiniciar no hover */
 .reset-button:hover {
-  background-color: #0056b3;
+  background-color: #d42954;
 }
